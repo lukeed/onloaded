@@ -1,7 +1,7 @@
 {
   "name": "onloaded",
   "version": "0.0.0",
-  "description": "WIP",
+  "description": "A tiny (350B) library to detect when images have loaded.",
   "repository": "lukeed/onloaded",
   "umd:main": "dist/onloaded.min.js",
   "module": "dist/onloaded.es.js",
