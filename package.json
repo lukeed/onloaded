@@ -25,7 +25,7 @@
   ],
   "keywords": [],
   "dependencies": {
-    "mitt": "^1.1.2"
+    "@arr/foreach": "^1.0.0"
   },
   "devDependencies": {
     "gzip-size": "^3.0.0",

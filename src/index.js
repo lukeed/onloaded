@@ -15,7 +15,8 @@ export default function (elem, opts) {
 		}
 	}
 
-	let ok = err = 0;
+	let ok = 0;
+	let err = 0;
 	const total = elem.length;
 
 	function isDone() {
@@ -25,11 +26,11 @@ export default function (elem, opts) {
 	}
 
 	function onload() {
-		ok++ && (opts.onLoad || noop)(this) && isDone();
+		ok++; (opts.onLoad || noop)(this); isDone();
 	}
 
 	function onerror() {
-		err++ && (opts.onError || noop)(this) && isDone();
+		err++; (opts.onError || noop)(this); isDone();
 	}
 
 	forEach(elem, el => {
