@@ -1,0 +1,37 @@
+{
+  "name": "onloaded",
+  "version": "0.0.0",
+  "description": "WIP",
+  "repository": "lukeed/onloaded",
+  "umd:main": "dist/onloaded.min.js",
+  "module": "dist/onloaded.es.js",
+  "main": "dist/onloaded.js",
+  "license": "MIT",
+  "author": {
+    "name": "Luke Edwards",
+    "email": "luke.edwards05@gmail.com",
+    "url": "lukeed.com"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "build": "node builder",
+    "pretest": "npm run build",
+    "test": "mocha test/*.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [],
+  "dependencies": {
+    "mitt": "^1.1.2"
+  },
+  "devDependencies": {
+    "gzip-size": "^3.0.0",
+    "mocha": "^3.4.2",
+    "pretty-bytes": "^4.0.2",
+    "rollup": "^0.45.2",
+    "uglify-js": "^2.8.22"
+  }
+}
