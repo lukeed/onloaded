@@ -1,4 +1,4 @@
-# onloaded [![Build Status](https://travis-ci.org/lukeed/onloaded.svg?branch=master)](https://travis-ci.org/lukeed/onloaded)
+# onloaded
 
 > A tiny (350B) library to detect when images have loaded
 
@@ -34,7 +34,7 @@ onloaded('#container > img', {
     img.className += ' failed';
   },
   onProgress(val) {
-    console.log(`I am ${ val * 100 }% complete!');
+    console.log(`I am ${ val * 100 }% complete!`);
   },
   onComplete(val, stats) {
     // val is always 1 ~~> 100%
