@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { resolve } = require('path');
+const { rollup } = require('rollup');
 const { minify } = require('uglify-js');
 const pretty = require('pretty-bytes');
 const sizer = require('gzip-size');
@@ -8,8 +8,14 @@ const pkg = require('./package');
 const umd = pkg['umd:main'];
 
 rollup({
+	useStrict: false,
 	entry: 'src/index.js',
-	useStrict: false
+	plugins: [
+		require('rollup-plugin-node-resolve')(),
+		require('rollup-plugin-buble')({
+			transform: { module:false }
+		}),
+	]
 }).then(bun => {
 	bun.write({
 		format: 'cjs',
@@ -38,5 +44,5 @@ rollup({
 		// output gzip size
 		const int = sizer.sync(code);
 		console.log(`> gzip size: ${ pretty(int) }`);
-	});
-});
+	}).catch(console.log);
+}).catch(err => console.log(err))
