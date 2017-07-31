@@ -5,10 +5,14 @@ function noop() {}
 export default function (elem, opts) {
 	opts = opts || {};
 
-	if (typeof elem === 'string') {
+	if (typeof elem == 'string') {
 		elem = document.querySelectorAll(elem);
 	} else if (elem.length == void 0) {
-		elem = [elem]; // was single elem
+		if (elem.nodeName == 'IMG') {
+			elem = [elem]; // was single img
+		} else {
+			elem = elem.getElementsByTagName('img');
+		}
 	}
 
 	let ok = err = 0;
