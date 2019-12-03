@@ -34,7 +34,9 @@ export default function (elem, opts) {
 	}
 
 	forEach(elem, el => {
-		el.onload = onload;
-		el.onerror = onerror;
+		const img = new Image();
+		img.src = el.src;
+		img.onload = onload;
+		img.onerror = onerror;
 	});
 }
