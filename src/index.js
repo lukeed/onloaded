@@ -34,9 +34,10 @@ export default function (elem, opts) {
 	}
 
 	forEach(elem, el => {
-		const img = new Image();
-		img.src = el.src;
-		img.onload = onload;
-		img.onerror = onerror;
+		const src = el.src;
+		el.src = '';
+		el.src = src;
+		el.onload = onload;
+		el.onerror = onerror;
 	});
 }
