@@ -34,6 +34,9 @@ export default function (elem, opts) {
 	}
 
 	forEach(elem, el => {
+		const src = el.src;
+		el.src = '';
+		el.src = src;
 		el.onload = onload;
 		el.onerror = onerror;
 	});
